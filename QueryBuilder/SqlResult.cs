@@ -81,10 +81,9 @@ namespace SqlKata
             }
 
             // fallback to string
-            return "'" + value.ToString() + "'";
+            return "'" + EscapeSingleQuotes(value.ToString()) + "'";
         }
 
-
-
+        private static string EscapeSingleQuotes(string val) => val.Replace("'", "''");
     }
 }
